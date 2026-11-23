@@ -5,7 +5,51 @@ import './Boardgame.css';
 
 type Theme = 'light' | 'dark';
 
-function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => void }) {
+type PageProps = {
+  theme: Theme;
+  toggleTheme: () => void;
+};
+
+function ThemeToggle({ theme, toggleTheme }: PageProps) {
+  return (
+    <button
+      className="theme-toggle"
+      type="button"
+      onClick={toggleTheme}
+      aria-label={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
+      title={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
+    >
+      {theme === 'light' ? (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l-1.42-1.42m11.3-11.3 1.42-1.42" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
+function HeaderActions({ theme, toggleTheme }: PageProps) {
+  return (
+    <div className="header-actions">
+      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+
+      <a className="button button-outline header-login" href="/404">
+        Masuk
+      </a>
+
+      <a className="button button-primary header-register" href="/404">
+        Daftar Sekarang
+      </a>
+    </div>
+  );
+}
+
+function HomePage({ theme, toggleTheme }: PageProps) {
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">
@@ -19,7 +63,9 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
           </a>
 
           <nav className="main-nav" aria-label="Navigasi utama">
-            <a className="nav-link active" href="/#beranda">Beranda</a>
+            <a className="nav-link active" href="/#beranda" aria-current="page">
+              Beranda
+            </a>
             <a className="nav-link" href="/#kelas">Kelas</a>
             <a className="nav-link" href="/#tentang">Tentang Kami</a>
             <a
@@ -35,33 +81,7 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
             </a>
           </nav>
 
-          <div className="header-actions">
-            <button
-              className="theme-toggle"
-              type="button"
-              onClick={toggleTheme}
-              aria-label={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
-              title={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              {theme === 'light' ? (
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l-1.42-1.42m11.3-11.3 1.42-1.42" />
-                </svg>
-              )}
-            </button>
-
-            <a className="button button-outline header-login" href="/#masuk">
-              Masuk
-            </a>
-            <a className="button button-primary header-register" href="/#daftar">
-              Daftar Sekarang
-            </a>
-          </div>
+          <HeaderActions theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
 
@@ -187,7 +207,7 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
                   tingkatkan kemampuan literasi digital.
                 </p>
               </div>
-              <a className="text-link" href="/#semua-kelas">
+              <a className="text-link" href="/404">
                 Lihat semua kelas <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -315,7 +335,7 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
                   Mulai perjalanan belajarmu hari ini. Jadilah bagian dari
                   masyarakat digital yang lebih kritis dan bertanggung jawab.
                 </p>
-                <a className="button button-light" href="/#masuk">
+                <a className="button button-light" href="/404">
                   Mulai Belajar <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -358,8 +378,8 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
 
           <div className="footer-column">
             <h2>Mulai Belajar</h2>
-            <a href="/#masuk">Masuk ke akun</a>
-            <a href="/#daftar">Daftar sebagai peserta</a>
+            <a href="/404">Masuk ke akun</a>
+            <a href="/404">Daftar sebagai peserta</a>
           </div>
         </div>
 
@@ -375,7 +395,7 @@ function HomePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => voi
   );
 }
 
-function BoardgamePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () => void }) {
+function BoardgamePage({ theme, toggleTheme }: PageProps) {
   return (
     <div className="app boardgame-page">
       <a className="skip-link" href="#main-content">
@@ -405,33 +425,7 @@ function BoardgamePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () =
             </a>
           </nav>
 
-          <div className="header-actions">
-            <button
-              className="theme-toggle"
-              type="button"
-              onClick={toggleTheme}
-              aria-label={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
-              title={`Aktifkan ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              {theme === 'light' ? (
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M20.2 15.5A8.5 8.5 0 0 1 8.5 3.8 8.5 8.5 0 1 0 20.2 15.5Z" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l-1.42-1.42m11.3-11.3 1.42-1.42" />
-                </svg>
-              )}
-            </button>
-
-            <a className="button button-outline header-login" href="/#masuk">
-              Masuk
-            </a>
-            <a className="button button-primary header-register" href="/#daftar">
-              Daftar Sekarang
-            </a>
-          </div>
+          <HeaderActions theme={theme} toggleTheme={toggleTheme} />
         </div>
       </header>
 
@@ -537,6 +531,92 @@ function BoardgamePage({ theme, toggleTheme }: { theme: Theme; toggleTheme: () =
   );
 }
 
+function NotFoundPage({ theme, toggleTheme }: PageProps) {
+  const goBack = () => {
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.assign('/');
+    }
+  };
+
+  return (
+    <div className="app not-found-page">
+      <a className="skip-link" href="#main-content">
+        Lewati ke konten utama
+      </a>
+
+      <header className="site-header">
+        <div className="container header-inner">
+          <a className="brand" href="/" aria-label="Cek Fakta LMS, beranda">
+            <img src="/cekfakta-logo.png" alt="Cek Fakta" />
+          </a>
+
+          <div className="header-actions">
+            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+          </div>
+        </div>
+      </header>
+
+      <main id="main-content" className="not-found-main">
+        <section className="not-found-section" aria-labelledby="not-found-title">
+          <div className="not-found-content">
+            <div className="not-found-illustration" aria-hidden="true">
+              <span className="not-found-orbit not-found-orbit-one" />
+              <span className="not-found-orbit not-found-orbit-two" />
+              <span className="not-found-star not-found-star-one">✦</span>
+              <span className="not-found-star not-found-star-two">✳</span>
+              <span className="not-found-number">404</span>
+              <span className="not-found-decoration">?</span>
+            </div>
+
+            <span className="not-found-eyebrow">HALAMAN TIDAK DITEMUKAN</span>
+
+            <h1 id="not-found-title">
+              Sepertinya kamu tersesat di dunia digital.
+            </h1>
+
+            <p className="not-found-description">
+              Halaman yang kamu cari mungkin sudah dipindahkan, tidak tersedia,
+              atau alamatnya kurang tepat. Jangan khawatir, kamu bisa kembali
+              dan melanjutkan perjalanan belajar dari halaman utama.
+            </p>
+
+            <div className="not-found-actions">
+              <a className="button button-primary button-large" href="/">
+                Kembali ke Beranda
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <button
+                className="button button-outline button-large"
+                type="button"
+                onClick={goBack}
+              >
+                Kembali ke Halaman Sebelumnya
+              </button>
+            </div>
+
+            <p className="not-found-code">
+              Kode kesalahan: <strong>404</strong>
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer not-found-footer">
+        <div className="container footer-bottom">
+          <p>
+            © {new Date().getFullYear()} LMS Cek Fakta. Bagian dari upaya
+            membangun ruang digital yang sehat.
+          </p>
+          <a href="/">Beranda</a>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 function App() {
   const [theme, setTheme] = useState<Theme>(() => {
     const savedTheme = localStorage.getItem('lms-theme');
@@ -552,9 +632,27 @@ function App() {
     setTheme((current) => (current === 'light' ? 'dark' : 'light'));
   };
 
-  return window.location.pathname.replace(/\/$/, '') === '/boardgame'
-    ? <BoardgamePage theme={theme} toggleTheme={toggleTheme} />
-    : <HomePage theme={theme} toggleTheme={toggleTheme} />;
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  useEffect(() => {
+    if (currentPath === '/') {
+      document.title = 'LMS Cek Fakta';
+    } else if (currentPath === '/boardgame') {
+      document.title = 'Boardgame Fandom Warnas | LMS Cek Fakta';
+    } else {
+      document.title = '404 | Halaman Tidak Ditemukan - LMS Cek Fakta';
+    }
+  }, [currentPath]);
+
+  if (currentPath === '/') {
+    return <HomePage theme={theme} toggleTheme={toggleTheme} />;
+  }
+
+  if (currentPath === '/boardgame') {
+    return <BoardgamePage theme={theme} toggleTheme={toggleTheme} />;
+  }
+
+  return <NotFoundPage theme={theme} toggleTheme={toggleTheme} />;
 }
 
 export default App;

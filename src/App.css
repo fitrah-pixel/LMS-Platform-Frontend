@@ -1431,3 +1431,564 @@
     line-height: 1.6;
   }
 }
+
+/* ========================================
+   404 NOT FOUND PAGE
+======================================== */
+
+.not-found-page {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background:
+    radial-gradient(
+      ellipse at 15% 45%,
+      rgba(38, 117, 216, 0.07),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 85% 35%,
+      rgba(216, 77, 173, 0.07),
+      transparent 38%
+    ),
+    var(--page-bg);
+}
+
+.not-found-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.not-found-section {
+  display: grid;
+  min-height: 590px;
+  flex: 1;
+  place-items: center;
+  padding: 65px 24px 75px;
+}
+
+.not-found-content {
+  width: 100%;
+  max-width: 650px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* 404 ILLUSTRATION */
+
+.not-found-illustration {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 205px;
+  place-items: center;
+  margin: 0 auto 30px;
+}
+
+.not-found-number {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(
+    110deg,
+    #2675d8 5%,
+    #8950c8 55%,
+    #d84dad 100%
+  );
+  background-clip: text;
+  color: transparent;
+  font-family: var(--font-heading);
+  font-size: clamp(100px, 18vw, 165px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -10px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.not-found-orbit {
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  border: 1px solid rgba(137, 80, 200, 0.15);
+  border-radius: 50%;
+}
+
+.not-found-orbit-one {
+  transform: rotate(-25deg) scaleX(1.5);
+}
+
+.not-found-orbit-two {
+  width: 135px;
+  height: 135px;
+  border-color: rgba(38, 117, 216, 0.18);
+  transform: rotate(35deg) scaleX(1.6);
+}
+
+.not-found-decoration {
+  position: absolute;
+  top: 8px;
+  right: calc(50% - 145px);
+  z-index: 3;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(137, 80, 200, 0.15);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-purple);
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 800;
+  transform: rotate(12deg);
+}
+
+.not-found-star {
+  position: absolute;
+  z-index: 3;
+  color: var(--color-pink);
+  font-size: 25px;
+}
+
+.not-found-star-one {
+  top: 30px;
+  left: calc(50% - 155px);
+}
+
+.not-found-star-two {
+  right: calc(50% - 175px);
+  bottom: 28px;
+  color: var(--color-blue);
+  font-size: 32px;
+}
+
+/* 404 CONTENT */
+
+.not-found-eyebrow {
+  display: inline-block;
+  margin-bottom: 17px;
+  padding: 9px 14px;
+  border: 1px solid rgba(137, 80, 200, 0.15);
+  border-radius: 30px;
+  background: var(--surface-tint);
+  color: var(--color-purple);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.not-found-content h1 {
+  max-width: 580px;
+  margin: 0 auto;
+  font-family: var(--font-heading);
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -1.5px;
+}
+
+.not-found-description {
+  max-width: 520px;
+  margin: 18px auto 28px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+}
+
+.not-found-code {
+  margin: 30px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.not-found-code strong {
+  color: var(--text-secondary);
+  font-weight: 800;
+}
+
+/* 404 FOOTER */
+
+.not-found-footer {
+  margin-top: auto;
+}
+
+.not-found-footer .footer-bottom {
+  min-height: 65px;
+}
+
+/* 404 DARK MODE */
+
+:root[data-theme='dark'] .not-found-page {
+  background:
+    radial-gradient(
+      ellipse at 15% 45%,
+      rgba(38, 117, 216, 0.13),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 85% 35%,
+      rgba(216, 77, 173, 0.12),
+      transparent 38%
+    ),
+    var(--page-bg);
+}
+
+:root[data-theme='dark'] .not-found-eyebrow {
+  border-color: rgba(137, 80, 200, 0.25);
+  background: #302b48;
+  color: #d1b1ff;
+}
+
+:root[data-theme='dark'] .not-found-orbit {
+  border-color: rgba(180, 145, 255, 0.18);
+}
+
+:root[data-theme='dark'] .not-found-decoration {
+  border-color: var(--border-color);
+  background: var(--surface);
+}
+
+/* 404 RESPONSIVE */
+
+@media (max-width: 800px) {
+  .not-found-section {
+    min-height: 540px;
+    padding-block: 55px 65px;
+  }
+
+  .not-found-illustration {
+    height: 185px;
+  }
+
+  .not-found-content {
+    max-width: 580px;
+  }
+}
+
+@media (max-width: 560px) {
+  .not-found-section {
+    min-height: 500px;
+    padding: 45px 20px 55px;
+  }
+
+  .not-found-illustration {
+    height: 155px;
+    margin-bottom: 25px;
+  }
+
+  .not-found-number {
+    font-size: clamp(100px, 31vw, 135px);
+    letter-spacing: -7px;
+  }
+
+  .not-found-orbit {
+    width: 145px;
+    height: 145px;
+  }
+
+  .not-found-orbit-two {
+    width: 105px;
+    height: 105px;
+  }
+
+  .not-found-decoration {
+    top: 3px;
+    right: calc(50% - 110px);
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+  }
+
+  .not-found-star-one {
+    top: 20px;
+    left: calc(50% - 120px);
+    font-size: 20px;
+  }
+
+  .not-found-star-two {
+    right: calc(50% - 130px);
+    bottom: 15px;
+    font-size: 25px;
+  }
+
+  .not-found-eyebrow {
+    margin-bottom: 14px;
+    font-size: 9px;
+  }
+
+  .not-found-content h1 {
+    font-size: 29px;
+    letter-spacing: -1px;
+  }
+
+  .not-found-description {
+    margin-block: 15px 23px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .not-found-actions .button {
+    width: 100%;
+    max-width: 310px;
+    min-height: 48px;
+    font-size: 12px;
+  }
+
+  .not-found-code {
+    margin-top: 23px;
+  }
+
+  .not-found-footer .footer-bottom {
+    min-height: 75px;
+  }
+}
+
+/* INTERACTION: HOVER DEVICES ONLY */
+
+@media (hover: hover) and (pointer: fine) {
+  .not-found-actions .button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ========================================
+   MOBILE TYPOGRAPHY OPTIMIZATION
+   ======================================== */
+
+@media (max-width: 560px) {
+  /* Navigasi */
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .header-register {
+    font-size: 12px;
+  }
+
+  /* Hero */
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(34px, 9vw, 39px);
+    line-height: 1.22;
+    letter-spacing: -1.5px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .button-large {
+    font-size: 14px;
+  }
+
+  .hero-note {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Trust strip */
+  .trust-item {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .trust-icon {
+    flex-shrink: 0;
+  }
+
+  /* Judul dan deskripsi bagian */
+  .section-kicker {
+    font-size: 12px;
+  }
+
+  .section-heading h2,
+  .benefits-heading h2,
+  .about-content h2 {
+    font-size: 27px;
+    line-height: 1.3;
+  }
+
+  .section-heading p,
+  .benefits-heading > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .text-link {
+    font-size: 14px;
+  }
+
+  /* Kartu kelas */
+  .course-art-label {
+    font-size: 11px;
+  }
+
+  .course-category {
+    font-size: 11px;
+  }
+
+  .course-level {
+    font-size: 12px;
+  }
+
+  .course-body h3 {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .course-body p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .course-link {
+    font-size: 14px;
+  }
+
+  /* Benefit */
+  .benefit-card h3 {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .benefit-card p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  /* Tentang */
+  .about-message-card strong {
+    font-size: 16px;
+  }
+
+  .about-message-caption {
+    font-size: 12px;
+  }
+
+  .about-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* CTA */
+  .cta-kicker {
+    font-size: 12px;
+  }
+
+  .cta-content h2 {
+    font-size: 27px;
+    line-height: 1.35;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  /* Footer */
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .footer-column h2 {
+    font-size: 14px;
+  }
+
+  .footer-column a {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .footer-bottom p,
+  .footer-bottom a {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* Halaman 404 */
+  .not-found-eyebrow {
+    font-size: 11px;
+  }
+
+  .not-found-content h1 {
+    font-size: 29px;
+    line-height: 1.35;
+  }
+
+  .not-found-description {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .not-found-actions .button {
+    font-size: 14px;
+  }
+
+  .not-found-code {
+    font-size: 12px;
+  }
+}
+
+/* HP dengan layar sangat kecil */
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+
+  .hero-content h1 {
+    font-size: 33px;
+  }
+
+  .trust-inner {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card {
+    padding: 20px;
+  }
+
+  .benefit-card h3 {
+    font-size: 15px;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+  }
+
+  .course-body p {
+    font-size: 14px;
+  }
+
+  .footer-main {
+    gap: 30px 15px;
+  }
+}
