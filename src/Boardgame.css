@@ -167,8 +167,8 @@
 }
 
 .boardgame-download:focus-visible {
-  outline: 3px solid var(--text-primary);
-  outline-offset: -5px;
+  outline: 3px solid var(--focus-ring);
+  outline-offset: -4px;
 }
 
 /* =========================================

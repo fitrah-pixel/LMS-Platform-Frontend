@@ -470,17 +470,22 @@ function BoardgamePage({ theme, toggleTheme }: PageProps) {
                   />
                 </div>
 
-                <div className="boardgame-card-footer">
-                  <a
-                    className="button button-primary button-large boardgame-download"
-                    href="https://drive.google.com/drive/folders/1m4Ce6k3lWbwZuFfSQfDnNSFB76uJvyD3?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Download Boardgame
-                    <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
+             <div className="boardgame-card-footer">
+  <a
+    className="button button-primary button-large boardgame-download"
+    href="https://drive.google.com/drive/folders/1m4Ce6k3lWbwZuFfSQfDnNSFB76uJvyD3?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Download Boardgame Fandom Warnas (terbuka di tab baru)"
+  >
+    Download Boardgame
+    <span aria-hidden="true">↗</span>
+  </a>
+
+  <span className="sr-only">
+    Tautan akan membuka Google Drive di tab baru.
+  </span>
+</div>
               </div>
             </div>
           </div>
