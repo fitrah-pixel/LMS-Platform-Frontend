@@ -1,0 +1,252 @@
+/* =========================================
+   BOARDGAME PAGE
+========================================= */
+
+.boardgame-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0 82px;
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(216, 77, 173, 0.12), transparent 32%),
+    radial-gradient(ellipse at 8% 88%, rgba(38, 117, 216, 0.12), transparent 34%),
+    var(--page-bg);
+}
+
+.boardgame-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.boardgame-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.boardgame-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--color-purple);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.boardgame-copy h1 {
+  max-width: 620px;
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -2px;
+}
+
+.boardgame-copy h1 span {
+  display: block;
+  background: linear-gradient(100deg, #2675d8 5%, #8950c8 60%, #d84dad 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.boardgame-description {
+  max-width: 570px;
+  margin: 25px 0 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.boardgame-question {
+  max-width: 570px;
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+/* =========================================
+   BOARDGAME CARD
+========================================= */
+
+.boardgame-art-column {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.boardgame-card {
+  width: min(100%, 410px);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 0 18px 50px rgba(45, 39, 99, 0.12);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.boardgame-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(45, 39, 99, 0.17);
+}
+
+.boardgame-art-wrap {
+  display: grid;
+  width: 100%;
+  min-height: 400px;
+  padding: 24px;
+  place-items: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+.boardgame-art {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.boardgame-card-footer {
+  display: flex;
+  justify-content: center;
+  padding: 22px 24px 26px;
+  border-top: 1px solid var(--border-color);
+  background: var(--surface);
+}
+
+.boardgame-download {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* FOOTER */
+
+.boardgame-footer-main {
+  grid-template-columns: 1.7fr 1fr 1fr;
+}
+
+/* DARK MODE */
+
+:root[data-theme='dark'] .boardgame-hero {
+  background:
+    radial-gradient(ellipse at 88% 12%, rgba(216, 77, 173, 0.16), transparent 32%),
+    radial-gradient(ellipse at 8% 88%, rgba(38, 117, 216, 0.16), transparent 34%),
+    var(--page-bg);
+}
+
+:root[data-theme='dark'] .boardgame-card {
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .boardgame-hero-grid {
+    gap: 35px;
+  }
+
+  .boardgame-card {
+    max-width: 370px;
+  }
+
+  .boardgame-art-wrap {
+    min-height: 360px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+  .boardgame-hero {
+    padding-block: 55px 55px;
+  }
+
+  .boardgame-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .boardgame-copy {
+    max-width: 650px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .boardgame-description,
+  .boardgame-question {
+    margin-inline: auto;
+  }
+
+  .boardgame-card {
+    max-width: 410px;
+  }
+
+  .boardgame-art-wrap {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 560px) {
+  .boardgame-hero {
+    padding-block: 42px 45px;
+  }
+
+  .boardgame-copy h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+
+  .boardgame-description {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .boardgame-question {
+    font-size: 15px;
+  }
+
+  .boardgame-card {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .boardgame-art-wrap {
+    min-height: 330px;
+    padding: 18px;
+  }
+
+  .boardgame-art {
+    max-height: 330px;
+  }
+
+  .boardgame-card-footer {
+    padding: 18px;
+  }
+
+  .boardgame-footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boardgame-card {
+    transition: none;
+  }
+
+  .boardgame-card:hover {
+    transform: none;
+  }
+}
