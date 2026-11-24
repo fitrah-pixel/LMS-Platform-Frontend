@@ -38,11 +38,17 @@ function HeaderActions({ theme, toggleTheme }: PageProps) {
     <div className="header-actions">
       <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
 
-      <a className="button button-outline header-login" href="/404">
+      <a
+        className="button button-outline header-login"
+        href="https://institute.mafindo.or.id/dashboard/"
+      >
         Masuk
       </a>
 
-      <a className="button button-primary header-register" href="/404">
+      <a
+        className="button button-primary header-register"
+        href="https://institute.mafindo.or.id/student-registration/?redirect_to=https://institute.mafindo.or.id/dashboard/"
+      >
         Daftar Sekarang
       </a>
     </div>
@@ -207,7 +213,10 @@ function HomePage({ theme, toggleTheme }: PageProps) {
                   tingkatkan kemampuan literasi digital.
                 </p>
               </div>
-              <a className="text-link" href="/404">
+              <a
+                className="text-link"
+                href="https://institute.mafindo.or.id/kelas/"
+              >
                 Lihat semua kelas <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -322,32 +331,6 @@ function HomePage({ theme, toggleTheme }: PageProps) {
             </div>
           </div>
         </section>
-
-        <section className="cta-section" id="daftar">
-          <div className="container">
-            <div className="cta-card">
-              <div className="cta-decoration cta-decoration-one" />
-              <div className="cta-decoration cta-decoration-two" />
-              <div className="cta-content">
-                <span className="cta-kicker">LANGKAH KECIL, DAMPAK BESAR</span>
-                <h2>Siap menjadi lebih cerdas memilah informasi?</h2>
-                <p>
-                  Mulai perjalanan belajarmu hari ini. Jadilah bagian dari
-                  masyarakat digital yang lebih kritis dan bertanggung jawab.
-                </p>
-                <a className="button button-light" href="/404">
-                  Mulai Belajar <span aria-hidden="true">→</span>
-                </a>
-              </div>
-              <div className="cta-graphic" aria-hidden="true">
-                <div className="cta-graphic-ring" />
-                <div className="cta-graphic-core">CF</div>
-                <span className="cta-graphic-star star-a">✦</span>
-                <span className="cta-graphic-star star-b">✳</span>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">
@@ -374,12 +357,6 @@ function HomePage({ theme, toggleTheme }: PageProps) {
             <a href="https://cekfakta.com/" target="_blank" rel="noopener noreferrer">
               CekFakta.com
             </a>
-          </div>
-
-          <div className="footer-column">
-            <h2>Mulai Belajar</h2>
-            <a href="/404">Masuk ke akun</a>
-            <a href="/404">Daftar sebagai peserta</a>
           </div>
         </div>
 
@@ -470,22 +447,22 @@ function BoardgamePage({ theme, toggleTheme }: PageProps) {
                   />
                 </div>
 
-             <div className="boardgame-card-footer">
-  <a
-    className="button button-primary button-large boardgame-download"
-    href="https://drive.google.com/drive/folders/1m4Ce6k3lWbwZuFfSQfDnNSFB76uJvyD3?usp=sharing"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Download Boardgame Fandom Warnas (terbuka di tab baru)"
-  >
-    Download Boardgame
-    <span aria-hidden="true">↗</span>
-  </a>
+                <div className="boardgame-card-footer">
+                  <a
+                    className="button button-primary button-large boardgame-download"
+                    href="https://drive.google.com/drive/folders/1m4Ce6k3lWbwZuFfSQfDnNSFB76uJvyD3?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Download Boardgame Fandom Warnas (terbuka di tab baru)"
+                  >
+                    Download Boardgame
+                    <span aria-hidden="true">↗</span>
+                  </a>
 
-  <span className="sr-only">
-    Tautan akan membuka Google Drive di tab baru.
-  </span>
-</div>
+                  <span className="sr-only">
+                    Tautan akan membuka Google Drive di tab baru.
+                  </span>
+                </div>
               </div>
             </div>
           </div>
